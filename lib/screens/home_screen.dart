@@ -7,7 +7,7 @@ import 'package:mshop/common/widgets/home_screen_widgets/popular_product_widget.
 import 'package:mshop/common/widgets/home_screen_widgets/promo_slider_widget.dart';
 import 'package:mshop/common/widgets/home_screen_widgets/search_container_widget.dart';
 import 'package:mshop/common/widgets/horizontal_heading_title_widget.dart';
-import 'package:mshop/constants/sizes.dart';
+import 'package:mshop/utils/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

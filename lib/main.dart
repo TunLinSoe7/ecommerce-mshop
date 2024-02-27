@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mshop/constants/colors.dart';
-import 'package:mshop/navigation_menu.dart';
+import 'package:get/get.dart';
+import 'package:mshop/screens/welcome_screen.dart';
+import 'package:mshop/utils/constants/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MShop',
       theme: ThemeData(
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           textTheme:
               const TextTheme(bodyText2: TextStyle(color: Colors.black54)),
           iconTheme: const IconThemeData(color: Colors.black54)),
-      home: const NavigationMenu(),
+      home: const WelcomeScreen(),
     );
   }
 }

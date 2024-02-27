@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:mshop/constants/sizes.dart';
+import 'package:mshop/utils/constants/sizes.dart';
 
 class PromoSliderWidget extends StatelessWidget {
   const PromoSliderWidget({

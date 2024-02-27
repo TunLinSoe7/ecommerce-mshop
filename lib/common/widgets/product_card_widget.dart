@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:mshop/constants/sizes.dart';
+import 'package:mshop/utils/constants/sizes.dart';
 
 class ProductCard extends StatelessWidget {
   final String imageUrl;
   final String productName;
   final String price;
+  final VoidCallback? onTap;
 
   const ProductCard({
     Key? key,
     required this.imageUrl,
     required this.productName,
     required this.price,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -32,9 +34,12 @@ class ProductCard extends StatelessWidget {
               borderRadius:
                   BorderRadius.all(Radius.circular(defaultBorderRadius)),
             ),
-            child: Image.network(
-              imageUrl,
-              height: 132,
+            child: GestureDetector(
+              onTap: onTap,
+              child: Image.network(
+                imageUrl,
+                height: 132,
+              ),
             ),
           ),
           const SizedBox(

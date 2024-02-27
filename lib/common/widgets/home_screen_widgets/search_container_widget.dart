@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mshop/constants/sizes.dart';
+import 'package:mshop/utils/constants/sizes.dart';
 
 class SearchContainerWidget extends StatelessWidget {
   const SearchContainerWidget({
