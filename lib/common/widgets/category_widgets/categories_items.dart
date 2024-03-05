@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mshop/utils/constants/sizes.dart';
 
@@ -27,8 +28,8 @@ class CategoriesItems extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: defaultPadding / 2),
             child: Column(
               children: [
-                Image.asset(
-                  image,
+                CachedNetworkImage(
+                  imageUrl: image,
                   width: 30,
                   height: 30,
                 ),

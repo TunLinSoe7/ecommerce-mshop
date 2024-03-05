@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mshop/utils/constants/sizes.dart';
 
@@ -36,9 +37,10 @@ class ProductCard extends StatelessWidget {
             ),
             child: GestureDetector(
               onTap: onTap,
-              child: Image.network(
-                imageUrl,
-                height: 132,
+              child: CachedNetworkImage(
+                imageUrl: imageUrl,
+                height: 135,
+                placeholder: (_, url) => const Icon(Icons.shopify_outlined,color: Colors.cyan,),
               ),
             ),
           ),

@@ -28,18 +28,18 @@ class WelcomeScreen extends StatelessWidget {
               height: defaultPadding / 2,
             ),
             const Text('Buy Any Items From Using App'),
-            Image.asset(kWelcomeImage),
+            Image.asset(Images.kWelcomeImage),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SocialButtonWidget(
-                  asset: kFacebookLogo,
+                  asset: Images.kFacebookLogo,
                 ),
                 SizedBox(
                   width: defaultPadding,
                 ),
                 SocialButtonWidget(
-                  asset: kGoogleLogo,
+                  asset: Images.kGoogleLogo,
                 ),
               ],
             ),

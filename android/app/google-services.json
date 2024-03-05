@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "239768092609",
+    "project_id": "mshop-ecommerce",
+    "storage_bucket": "mshop-ecommerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239768092609:android:1d3229ef4a064022f87940",
+        "android_client_info": {
+          "package_name": "com.example.mshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEUGu2zXOMh8WGqYN6g5Y03N-PNGSG-oE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

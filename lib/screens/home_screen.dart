@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
               ),
 
               /// -- Categories
-              CategoryWidget(),
+              HomeCategoryWidget(),
               SizedBox(
                 height: defaultPadding,
               ),
@@ -63,13 +63,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-List<Map<String, dynamic>> images = [
-  {'image': 'assets/images/pants.png', 'name': 'Pants'},
-  {'image': 'assets/images/pants.png', 'name': 'Pants'},
-  {'image': 'assets/images/pants.png', 'name': 'Pants'},
-  {'image': 'assets/images/pants.png', 'name': 'Pants'},
-  {'image': 'assets/images/pants.png', 'name': 'Pants'},
-  {'image': 'assets/images/pants.png', 'name': 'Pants'},
-  {'image': 'assets/images/pngwing.png', 'name': 'Dress'},
-];

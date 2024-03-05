@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:mshop/common/widgets/login_signup_btn_widget.dart';
 import 'package:mshop/common/widgets/text_from_field_widget.dart';
+import 'package:mshop/controllers/sign_up_controller.dart';
 import 'package:mshop/screens/login_screen.dart';
 import 'package:mshop/utils/constants/colors.dart';
 import 'package:mshop/utils/constants/sizes.dart';
+import 'package:mshop/utils/validators/validators.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignUpController());
     return Form(
+      key: controller.signupFormKey,
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
@@ -43,36 +48,65 @@ class SignUpScreen extends StatelessWidget {
                 const SizedBox(
                   height: defaultPadding + 10,
                 ),
-                const TextFormFieldWidget(
-                  labelText: 'Name',
+
+                /// Username
+                TextFormFieldWidget(
+                  validator: (value) =>
+                      Validators.validateEmptyText('Username', value),
+                  controller: controller.userName,
+                  labelText: 'Username',
                   prefixIcon: Icons.person_outline,
                 ),
                 const SizedBox(
                   height: defaultPadding,
                 ),
-                const TextFormFieldWidget(
+
+                /// Email
+                TextFormFieldWidget(
+                  validator: (value) => Validators.validateEmail(value),
+                  controller: controller.email,
                   labelText: 'E-mail',
                   prefixIcon: Icons.mail_outline_outlined,
                 ),
                 const SizedBox(
                   height: defaultPadding,
                 ),
-                const TextFormFieldWidget(
+
+                /// Phone
+                TextFormFieldWidget(
+                  validator: (value) => Validators.validatePhoneNumber(value),
+                  controller: controller.phoneNumber,
                   labelText: 'Phone',
                   prefixIcon: Icons.phone_android,
                 ),
                 const SizedBox(
                   height: defaultPadding,
                 ),
-                const TextFormFieldWidget(
-                  labelText: 'Password',
-                  prefixIcon: Icons.password,
-                  suffixIcon: Icon(Icons.visibility),
-                ),
+
+                /// Password
+                Obx(() {
+                  return TextFormFieldWidget(
+                    obscureText: controller.hidePassword.value,
+                    validator: (value) => Validators.validatePassword(value),
+                    controller: controller.password,
+                    labelText: 'Password',
+                    prefixIcon: Icons.password,
+                    suffixIcon: InkWell(
+                        onTap: () => controller.hidePassword.value =
+                            !controller.hidePassword.value,
+                        child: Icon(controller.hidePassword.value
+                            ? Iconsax.eye_slash
+                            : Iconsax.eye)),
+                  );
+                }),
                 const SizedBox(
                   height: defaultPadding,
                 ),
-                const LoginSingUpBtnWidget(text: 'Create an account'),
+                LoginSingUpBtnWidget(
+                    onPressed: () {
+                      controller.signUp();
+                    },
+                    text: 'Create an account'),
                 const SizedBox(
                   height: defaultPadding,
                 ),
