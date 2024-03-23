@@ -1,21 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:mshop/utils/constants/sizes.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ShimmerEffect extends StatelessWidget {
-  const ShimmerEffect({super.key, required this.width, required this.height, this.color,this.radius = 15});
+  const ShimmerEffect(
+      {super.key,
+      required this.width,
+      required this.height,
+      this.radius = defaultBorderRadius,
+      this.color});
   final double width;
   final double height;
-  final double radius ;
+  final double radius;
   final Color? color;
+
   @override
   Widget build(BuildContext context) {
-    return Shimmer.fromColors(baseColor: Colors.grey[300]!, highlightColor: Colors.grey[100]!, child: Container(
-      width: width,
-      height: height,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(radius),
-        color: color,
+    return Padding(
+      padding:
+          const EdgeInsets.only(left: defaultPadding, right: defaultPadding),
+      child: SizedBox(
+        width: width,
+        height: height,
+        child: Shimmer.fromColors(
+          baseColor: Colors.grey[300]!,
+          highlightColor: Colors.grey[100]!,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(radius)),
+              color: Colors.white,
+            ),
+          ),
+        ),
       ),
-    ));
+    );
   }
 }

@@ -16,9 +16,9 @@ class PromoSliderWidget extends StatelessWidget {
     final controller = Get.put(BannerController());
     return Obx(() {
       if (controller.isLoading.value) {
-        const ShimmerEffect(
+        return const ShimmerEffect(
           width: double.infinity,
-          height: 70,
+          height: 150,
         );
       }
       return CarouselSlider.builder(
@@ -31,13 +31,18 @@ class PromoSliderWidget extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: defaultPadding),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(defaultBorderRadius),
-                  child: CachedNetworkImage(
-                    fit: BoxFit.fill,
-                    imageUrl: '${controller.banners[index].image}',
-                    placeholder: (_, url) => const Icon(
-                      Icons.shopify_outlined,
-                      color: Colors.cyan,
-                      size: 50,
+                  child: InkWell(
+                    onTap: () {
+                      print('jejf============>${16 / 7}');
+                    },
+                    child: CachedNetworkImage(
+                      fit: BoxFit.fill,
+                      imageUrl: '${controller.banners[index].image}',
+                      placeholder: (_, url) => const Icon(
+                        Icons.shopify_outlined,
+                        color: Colors.cyan,
+                        size: 50,
+                      ),
                     ),
                   ),
                 ));

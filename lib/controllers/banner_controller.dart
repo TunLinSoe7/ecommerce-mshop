@@ -22,6 +22,8 @@ class BannerController extends GetxController {
       isLoading.value = true;
       final banners = await _bannerRepo.fetchBanners();
       this.banners.assignAll(banners);
+      print('banner==================>${banners.length}');
+      update();
     } catch (e) {
       print('=======================>${e.toString()}');
       THelperFunctions.getFirebaseErrorMessage(e.toString());

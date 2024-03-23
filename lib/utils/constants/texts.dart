@@ -1,5 +1,7 @@
 class TTexts {
   TTexts._();
+
+  static const String gorditaFont = "Gordita";
   // -- Onboarding Text
   static const String onBoardingTitle1 = "Choose your product";
   static const String onBoardingTitle2 = "Select Payment Method";

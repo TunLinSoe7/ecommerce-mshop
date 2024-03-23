@@ -7,19 +7,24 @@ import 'package:mshop/common/widgets/home_screen_widgets/popular_product_widget.
 import 'package:mshop/common/widgets/home_screen_widgets/promo_slider_widget.dart';
 import 'package:mshop/common/widgets/home_screen_widgets/search_container_widget.dart';
 import 'package:mshop/common/widgets/horizontal_heading_title_widget.dart';
+import 'package:mshop/screens/cart_screen.dart';
 import 'package:mshop/utils/constants/sizes.dart';
+import 'package:mshop/utils/helpers/helper_functions.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       appBar: CustomAppBar(
+          actionOnPressed: () {
+            THelperFunctions.navigateToScreen(context, const CartScreen());
+          },
           titleText: '12/3 Yangon',
           leadingIcon: Icons.sort,
-          trailingIcon: Iconsax.notification),
-      body: SingleChildScrollView(
+          trailingIcon: Iconsax.shopping_cart),
+      body: const SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(bottom: 10),
           child: Column(

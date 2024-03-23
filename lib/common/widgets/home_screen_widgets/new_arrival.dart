@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mshop/common/widgets/product_card_widget.dart';
-import 'package:mshop/screens/product_detail_screen.dart';
 
 class NewArrivalWidget extends StatelessWidget {
   const NewArrivalWidget({
@@ -17,7 +15,7 @@ class NewArrivalWidget extends StatelessWidget {
         itemBuilder: (_, index) {
           return ProductCard(
             onTap: () {
-              Get.to(const ProductDetailScreen());
+              // Get.to(const ProductDetailScreen());
             },
             imageUrl:
                 'https://firebasestorage.googleapis.com/v0/b/bazar-d9951.appspot.com/o/Stylish_blue_plaid_shirt_for_men_-5-removebg-preview.png?alt=media&token=7cb94914-d07e-47eb-b3c8-d28f20cdfca2',
